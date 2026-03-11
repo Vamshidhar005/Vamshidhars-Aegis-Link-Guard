@@ -121,14 +121,14 @@ export default function App() {
           <h1 style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(22px,5vw,38px)",fontWeight:900,letterSpacing:3,background:"linear-gradient(135deg,#FFD700,#D4AF37,#C0A060,#D4AF37,#FFD700)",backgroundSize:"200% auto",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",animation:"shimmer 4s linear infinite",marginBottom:6}}>
             AEGIS LINK GUARD
           </h1>
-          <p style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",letterSpacing:4}}>// PHISHING & SPAM URL DETECTOR</p>
+          <p style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",letterSpacing:4}}>// PHISHING & SPAM URL DETECTOR</p>
         </div>
 
         {/* ── TABS ── */}
         <div style={{display:"flex",marginBottom:28,borderBottom:"1px solid rgba(212,175,55,0.15)",overflowX:"auto"}}>
           {[["checker","🔍 Scan"],["history","📋 History"],["stats","📊 Stats"],["tips","🛡️ Safety Tips"],["attacks","⚠️ Attacks"],["about","👤 About"]].map(([t,label])=>(
             <button key={t} className="tbtn" onClick={()=>setTab(t)}
-              style={{background:"none",border:"none",padding:"10px 16px",cursor:"pointer",fontFamily:"'JetBrains Mono'",fontSize:9,letterSpacing:1,color:tab===t?"#D4AF37":"#7A7468",borderBottom:tab===t?"2px solid #D4AF37":"2px solid transparent",transition:"all 0.2s",marginBottom:-1,whiteSpace:"nowrap"}}>
+              style={{background:"none",border:"none",padding:"10px 16px",cursor:"pointer",fontFamily:"'JetBrains Mono'",fontSize:11,letterSpacing:1,color:tab===t?"#D4AF37":"#7A7468",borderBottom:tab===t?"2px solid #D4AF37":"2px solid transparent",transition:"all 0.2s",marginBottom:-1,whiteSpace:"nowrap"}}>
               {label}
             </button>
           ))}
@@ -139,7 +139,7 @@ export default function App() {
           <div style={{animation:"fadeUp 0.4s ease"}}>
             <div style={{background:"#0A0A0F",border:"1px solid rgba(212,175,55,0.2)",marginBottom:20}}>
               <div style={{padding:"9px 18px",borderBottom:"1px solid rgba(212,175,55,0.1)"}}>
-                <span style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#D4AF37",letterSpacing:4}}>ENTER TARGET URL</span>
+                <span style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",letterSpacing:4}}>ENTER TARGET URL</span>
               </div>
               <div style={{display:"flex"}}>
                 <input value={url} onChange={e=>setUrl(e.target.value)} onKeyDown={e=>e.key==="Enter"&&scan()}
@@ -154,7 +154,7 @@ export default function App() {
                 <div style={{height:2,background:"rgba(212,175,55,0.1)"}}>
                   <div style={{height:"100%",background:"linear-gradient(to right,#D4AF37,#FFD700)",width:`${progress}%`,transition:"width 0.25s ease"}}/>
                 </div>
-                <div style={{padding:"8px 18px",fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468"}}>{scanMsgs[Math.floor(progress/20)]}</div>
+                <div style={{padding:"8px 18px",fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468"}}>{scanMsgs[Math.floor(progress/20)]}</div>
               </>}
             </div>
 
@@ -164,15 +164,15 @@ export default function App() {
                 <div style={{display:"flex",gap:20,alignItems:"center",marginBottom:20,flexWrap:"wrap"}}>
                   <div style={{width:78,height:78,borderRadius:"50%",border:`3px solid ${SC[result.status]}`,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",flexShrink:0,background:`${SC[result.status]}11`}}>
                     <div style={{fontFamily:"'Cinzel',serif",fontSize:24,fontWeight:900,color:SC[result.status],lineHeight:1}}>{result.score}</div>
-                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:7,color:SC[result.status],letterSpacing:2}}>RISK</div>
+                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:SC[result.status],letterSpacing:2}}>RISK</div>
                   </div>
                   <div>
                     <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:5}}>
                       <span style={{width:24,height:24,borderRadius:"50%",background:SC[result.status],display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:"#060608"}}>{SI[result.status]}</span>
                       <span style={{fontFamily:"'Cinzel',serif",fontSize:18,fontWeight:700,color:SC[result.status],letterSpacing:3}}>{result.status}</span>
                     </div>
-                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",wordBreak:"break-all"}}>{result.url}</div>
-                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",marginTop:3}}>Scanned at {result.time}</div>
+                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",wordBreak:"break-all"}}>{result.url}</div>
+                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",marginTop:3}}>Scanned at {result.time}</div>
                   </div>
                 </div>
                 <div style={{height:5,background:"rgba(255,255,255,0.05)",borderRadius:3,overflow:"hidden",marginBottom:16}}>
@@ -194,11 +194,11 @@ export default function App() {
 
             {!result && !loading && (
               <div style={{marginTop:14}}>
-                <div style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#7A7468",letterSpacing:4,marginBottom:8}}>TRY EXAMPLES</div>
+                <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",letterSpacing:4,marginBottom:8}}>TRY EXAMPLES</div>
                 <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
                   {["https://google.com","http://free-prize-winner.tk/claim","http://192.168.1.1/login-verify","https://phishing-site.com"].map(ex=>(
                     <button key={ex} className="ex-btn" onClick={()=>setUrl(ex)}
-                      style={{background:"rgba(212,175,55,0.05)",border:"1px solid rgba(212,175,55,0.2)",color:"#D4AF37",padding:"5px 10px",cursor:"pointer",fontFamily:"'JetBrains Mono'",fontSize:9,transition:"all 0.2s"}}>
+                      style={{background:"rgba(212,175,55,0.05)",border:"1px solid rgba(212,175,55,0.2)",color:"#D4AF37",padding:"5px 10px",cursor:"pointer",fontFamily:"'JetBrains Mono'",fontSize:11,transition:"all 0.2s"}}>
                       {ex.length>32?ex.slice(0,32)+"...":ex}
                     </button>
                   ))}
@@ -220,9 +220,9 @@ export default function App() {
                 <div>
                   <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:3}}>
                     <span style={{fontFamily:"'Cinzel',serif",fontSize:11,fontWeight:700,color:SC[r.status],letterSpacing:2}}>{r.status}</span>
-                    <span style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#7A7468"}}>· {r.score}/100 · {r.time}</span>
+                    <span style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468"}}>· {r.score}/100 · {r.time}</span>
                   </div>
-                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#E8E0D0",wordBreak:"break-all"}}>{r.url}</div>
+                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#E8E0D0",wordBreak:"break-all"}}>{r.url}</div>
                 </div>
                 <div style={{width:36,height:36,borderRadius:"50%",border:`2px solid ${SC[r.status]}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontFamily:"'Cinzel'",fontSize:13,fontWeight:900,color:SC[r.status]}}>{r.score}</div>
               </div>
@@ -237,12 +237,12 @@ export default function App() {
               {[[stats.total,"TOTAL SCANNED","#D4AF37"],[stats.safe,"SAFE LINKS","#4ade80"],[stats.threats,"THREATS FOUND","#ef4444"]].map(([val,label,col])=>(
                 <div key={label} style={{background:"#0A0A0F",border:`1px solid ${col}22`,padding:"20px 14px",textAlign:"center"}}>
                   <div style={{fontFamily:"'Cinzel',serif",fontSize:28,fontWeight:900,color:col,marginBottom:4}}>{val.toLocaleString()}</div>
-                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:7,color:"#7A7468",letterSpacing:2}}>{label}</div>
+                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",letterSpacing:2}}>{label}</div>
                 </div>
               ))}
             </div>
             <div style={{background:"#0A0A0F",border:"1px solid rgba(212,175,55,0.15)",padding:"22px"}}>
-              <div style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#D4AF37",letterSpacing:4,marginBottom:14}}>DETECTION BREAKDOWN</div>
+              <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",letterSpacing:4,marginBottom:14}}>DETECTION BREAKDOWN</div>
               {[["Safe URLs",stats.safe,"#4ade80"],["Threats Detected",stats.threats,"#ef4444"]].map(([label,val,col])=>(
                 <div key={label} style={{marginBottom:12}}>
                   <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
@@ -254,7 +254,7 @@ export default function App() {
                   </div>
                 </div>
               ))}
-              <div style={{marginTop:14,padding:"9px 12px",background:"rgba(212,175,55,0.05)",border:"1px solid rgba(212,175,55,0.1)",fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468"}}>
+              <div style={{marginTop:14,padding:"9px 12px",background:"rgba(212,175,55,0.05)",border:"1px solid rgba(212,175,55,0.1)",fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468"}}>
                 ◆ Accuracy: <span style={{color:"#4ade80"}}>97.3%</span> &nbsp;·&nbsp; Avg scan: <span style={{color:"#4ade80"}}>1.4s</span>
               </div>
             </div>
@@ -266,14 +266,14 @@ export default function App() {
           <div style={{animation:"fadeUp 0.4s ease"}}>
             <div style={{marginBottom:18}}>
               <div style={{fontFamily:"'Cinzel',serif",fontSize:17,color:"#D4AF37",letterSpacing:3,marginBottom:4}}>TOP 5 SAFETY TIPS</div>
-              <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",letterSpacing:2}}>How to stay safe & avoid cyber scams</div>
+              <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",letterSpacing:2}}>How to stay safe & avoid cyber scams</div>
             </div>
             {safetyTips.map((tip,i)=>(
               <div key={i} style={{background:"#0A0A0F",border:"1px solid rgba(212,175,55,0.12)",padding:"18px",marginBottom:8,display:"flex",gap:14,alignItems:"flex-start"}}>
                 <div style={{width:42,height:42,background:"rgba(212,175,55,0.08)",border:"1px solid rgba(212,175,55,0.25)",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",fontSize:18,flexShrink:0}}>{tip.icon}</div>
                 <div>
                   <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:5}}>
-                    <span style={{fontFamily:"'JetBrains Mono'",fontSize:7,color:"#D4AF37",background:"rgba(212,175,55,0.1)",padding:"2px 6px",letterSpacing:2}}>TIP {String(i+1).padStart(2,"0")}</span>
+                    <span style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",background:"rgba(212,175,55,0.1)",padding:"2px 6px",letterSpacing:2}}>TIP {String(i+1).padStart(2,"0")}</span>
                     <span style={{fontFamily:"'Cinzel',serif",fontSize:12,color:"#E8E0D0",letterSpacing:1}}>{tip.title}</span>
                   </div>
                   <p style={{fontFamily:"'Lato',sans-serif",fontSize:12,color:"#9A9088",lineHeight:1.7}}>{tip.desc}</p>
@@ -288,7 +288,7 @@ export default function App() {
           <div style={{animation:"fadeUp 0.4s ease"}}>
             <div style={{marginBottom:18}}>
               <div style={{fontFamily:"'Cinzel',serif",fontSize:17,color:"#ef4444",letterSpacing:3,marginBottom:4}}>TOP 5 CYBER ATTACKS IN INDIA</div>
-              <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",letterSpacing:2}}>Most significant cybersecurity incidents</div>
+              <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",letterSpacing:2}}>Most significant cybersecurity incidents</div>
             </div>
             {cyberAttacks.map((atk,i)=>(
               <div key={i} style={{background:"#0A0A0F",border:"1px solid rgba(239,68,68,0.12)",padding:"18px",marginBottom:8,position:"relative",overflow:"hidden"}}>
@@ -298,10 +298,10 @@ export default function App() {
                     <span style={{fontFamily:"'Cinzel',serif",fontSize:22,fontWeight:900,color:"rgba(239,68,68,0.2)",lineHeight:1}}>#{atk.rank}</span>
                     <div>
                       <div style={{fontFamily:"'Cinzel',serif",fontSize:12,color:"#E8E0D0",letterSpacing:1,marginBottom:2}}>{atk.name}</div>
-                      <div style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#7A7468"}}>{atk.year} · {atk.victims} victims</div>
+                      <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468"}}>{atk.year} · {atk.victims} victims</div>
                     </div>
                   </div>
-                  <span style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#ef4444",background:"rgba(239,68,68,0.08)",border:"1px solid rgba(239,68,68,0.25)",padding:"3px 7px",whiteSpace:"nowrap"}}>{atk.impact}</span>
+                  <span style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#ef4444",background:"rgba(239,68,68,0.08)",border:"1px solid rgba(239,68,68,0.25)",padding:"3px 7px",whiteSpace:"nowrap"}}>{atk.impact}</span>
                 </div>
                 <p style={{fontFamily:"'Lato',sans-serif",fontSize:12,color:"#9A9088",lineHeight:1.7,paddingLeft:4}}>{atk.desc}</p>
               </div>
@@ -321,19 +321,19 @@ export default function App() {
                 */}
                 <div style={{width:80,height:96,background:"linear-gradient(135deg,rgba(212,175,55,0.15),rgba(212,175,55,0.05))",border:"2px solid rgba(212,175,55,0.4)",flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Cinzel',serif",fontSize:22,color:"#D4AF37",fontWeight:900}}>VB</div>
                 <div>
-                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#D4AF37",letterSpacing:4,marginBottom:5}}>DEVELOPER</div>
+                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",letterSpacing:4,marginBottom:5}}>DEVELOPER</div>
                   <div style={{fontFamily:"'Cinzel',serif",fontSize:18,color:"#E8E0D0",letterSpacing:2,marginBottom:2}}>Vamshidhar Begari</div>
-                  <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468",marginBottom:8}}>Cybersecurity Enthusiast · B.Tech Student</div>
-                  <p style={{fontFamily:"'Lato',sans-serif",fontSize:12,color:"#9A9088",lineHeight:1.7}}>Passionate about cybersecurity and building tools that protect people online. This project was built as part of my college curriculum to raise awareness about phishing and spam URLs in India.</p>
+                  <div style={{fontSize:9fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468",marginBottom:8}}>Cybersecurity Enthusiast · BA HEP Student</div>
+                  <p style={{fontFamily:"'Lato',sans-serif",fontSize:12,color:"#9A9088",lineHeight:1.7}}>Passionate about cybersecurity and building tools that protect people online. This project was built as part of my intrest to raise awareness about phishing and spam URLs in India.</p>
                 </div>
               </div>
               <div style={{height:1,background:"rgba(212,175,55,0.1)",marginBottom:16}}/>
-              <div style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#D4AF37",letterSpacing:4,marginBottom:12}}>CONTACT INFORMATION</div>
+              <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",letterSpacing:4,marginBottom:12}}>CONTACT INFORMATION</div>
               <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:7}}>
-                {[["📞","Phone","6305396413"],["📧","Email","vamshidharbegari005@gmail.com"],["📍","Location","Hyderabad, Telangana"],["🎓","Degree","B.Tech — Cybersecurity"],["💼","Interests","Ethical Hacking, Network Security"],["🛡️","Project","AEGIS Link Guard v1.0"]].map(([icon,label,val])=>(
+                {[["📞","Phone","6305396413"],["📧","Email","vamshidharbegari005@gmail.com"],["📍","Location","Hyderabad, Telangana"],["🎓","Degree", BA HEP — Cybersecurity"],["💼","Interests","Ethical Hacking, Network Security"],["🛡️","Project","AEGIS Link Guard v1.0"]].map(([icon,label,val])=>(
                   <div key={label} style={{background:"rgba(212,175,55,0.03)",border:"1px solid rgba(212,175,55,0.08)",padding:"9px 11px"}}>
-                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:7,color:"#7A7468",marginBottom:2}}>{icon} {label}</div>
-                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#E8E0D0",wordBreak:"break-all"}}>{val}</div>
+                    <div style={{fontFamily:"'JetBrains Mono'",,color:"#7A7468",marginBottom:2}}>{icon} {label}</div>
+                    <div style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#E8E0D0",wordBreak:"break-all"}}>{val}</div>
                   </div>
                 ))}
               </div>
@@ -344,16 +344,16 @@ export default function App() {
         {/* ── FOOTER ── */}
         <div style={{marginTop:36,borderTop:"1px solid rgba(212,175,55,0.12)",paddingTop:20}}>
           <div style={{background:"#0A0A0F",border:"1px solid rgba(212,175,55,0.15)",padding:"18px 20px",marginBottom:12}}>
-            <div style={{fontFamily:"'JetBrains Mono'",fontSize:7,color:"#D4AF37",letterSpacing:4,marginBottom:12}}>CONTACT & INFO</div>
+            <div style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#D4AF37",letterSpacing:4,marginBottom:12}}>CONTACT & INFO</div>
             <div style={{display:"grid",gridTemplateColumns:"auto 1fr",gap:"7px 18px",alignItems:"center"}}>
-              {[["👤","Name","Vamshidhar Begari"],["📞","Phone","6305396413"],["📧","Email","vamshidharbegari005@gmail.com"],["📍","Location","Hyderabad, Telangana, India"],["🎓","College","B.Tech — Cybersecurity Project"]].map(([icon,label,val])=>(
-                [<div key={label+"i"} style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#7A7468"}}>{icon} {label}:</div>,
-                 <div key={label+"v"} style={{fontFamily:"'JetBrains Mono'",fontSize:9,color:"#E8E0D0"}}>{val}</div>]
+              {[["👤","Name","Vamshidhar Begari"],["📞","Phone","6305396413"],["📧","Email","vamshidharbegari005@gmail.com"],["📍","Location","Hyderabad, Telangana, India"],["🎓","College",Degree BA HEP — Cybersecurity Project"]].map(([icon,label,val])=>(
+                [<div key={label+"i"} style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#7A7468"}}>{icon} {label}:</div>,
+                 <div key={label+"v"} style={{fontFamily:"'JetBrains Mono'",fontSize:11,color:"#E8E0D0"}}>{val}</div>]
               ))}
             </div>
           </div>
           <div style={{textAlign:"center"}}>
-            <p style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#3A3630",letterSpacing:3}}>MADE BY VAMSHIDHAR USING CLAUDE AI</p>
+            <p style={{fontFamily:"'JetBrains Mono'",fontSize:8,color:"#3A3630",letterSpacing:3}}>MADE BY VAMSHIDHAR USING WITH THE HELP OF CLAUDE AI</p>
           </div>
         </div>
 
